@@ -53,13 +53,13 @@ function Master() {
               <Link to="/master/san-pham-sua-list">Sản phẩm sữa</Link>
             </li>
             <li style={{ marginBottom: '1rem' }}>
-              <Link to="/master/lo-sua-list">Nhà phân phối cập nhật thông tin hộp sữa</Link>
+              <Link to="/master/san-pham-sua-list">Nhà phân phối cập nhật thông tin hộp sữa</Link>
             </li>
             <li style={{ marginBottom: '1rem' }}>
-              <Link to="/master/lo-sua-list">Nhà phân phối phê duyệt vận chuyển</Link>
+              <Link to="/master/san-pham-sua-list">Nhà phân phối phê duyệt vận chuyển</Link>
             </li>
             <li style={{ marginBottom: '1rem' }}>
-              <Link to="/master/lo-sua-list">Nhà bán lẻ cập nhật trạng thái</Link>
+              <Link to="/master/san-pham-sua-list">Nhà bán lẻ cập nhật trạng thái</Link>
             </li>
             <li style={{ marginBottom: '1rem' }}>
               <Link to="/master/truy-xuat-san-pham">Truy xuất nguồn gốc</Link>

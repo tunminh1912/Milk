@@ -11,6 +11,7 @@ import MilkBoxForm from './MilkBoxForm';
 import MilkBoxList from "./MilkBoxList.js"
 import MilkBoxApproval from "./MilkBoxApproval.js" 
 import TraceMilkProduct from './TraceMilkProduct';
+import Add_participants from './Add_participants.js';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="san-pham-sua-list" element={<MilkBoxList />} />
         <Route path="san-pham-sua-duyet" element={<MilkBoxApproval />} />
         <Route path="truy-xuat-san-pham" element={<TraceMilkProduct />} />
+        <Route path="thanh-phan-tham-gia/them" element={<Add_participants />} />
       </Route>
     </Routes>
   );

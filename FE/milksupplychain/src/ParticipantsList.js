@@ -58,6 +58,9 @@ const ParticipantsList = () => {
       <button onClick={backHome} style={{ padding: '4px 8px 4px 8px', marginTop: "5px", marginLeft: "10px" }}>
         Trở về
       </button>
+      <button onClick={()=>{navigate('/master/thanh-phan-tham-gia/them')}} style={{ padding: '4px 8px 4px 8px', marginTop: "5px", marginLeft: "10px" }}>
+        Thêm thành phần tham gia
+      </button>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       {participants.length > 0 && (
         <table border="1" cellPadding="8" cellSpacing="0" style={{ marginTop: '2px', width: '100%', borderCollapse: 'collapse' }}>
