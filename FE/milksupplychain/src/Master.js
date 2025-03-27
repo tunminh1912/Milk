@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 import { AccountContext } from './AccountContext';
+import './Master.css'; // Import the CSS
 
 function Master() {
   // Lấy role hoặc name của tài khoản hiện tại
@@ -8,80 +9,64 @@ function Master() {
   const role = currentAccount ? currentAccount.role : 'Chưa đăng nhập';
   const name = currentAccount ? currentAccount.name : '';
 
+  const location = useLocation(); // Get current route location
+
   return (
-    <div style={{ fontFamily: 'sans-serif' }}>
+    <div className="master-container">
       {/* Header */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '1rem',
-        backgroundColor: '#66FF33'
-      }}>
+      <div className="header">
         <img
-                src={require('./images/logo.png')}
-                alt="Sơ đồ chuỗi cung ứng"
-                style={{ height: "50px" }}
-            />
-        <h1 style={{ margin: 0, color: "#00008b" }}>Hệ thống Blockchain cho Chuỗi cung ứng sữa</h1>
-        <div>
-          <div style={{fontWeight: 'bold', textAlign: 'right'}}>Đăng nhập:</div>
+          src={require('./images/logo.png')}
+          alt="Sơ đồ chuỗi cung ứng"
+          className="logo"
+        />
+        <h1 className="header-title">Hệ thống Blockchain cho Chuỗi cung ứng sữa</h1>
+        <div className="account-info">
+          <div className="login-label">Đăng nhập:</div>
           <div>{name} - {role}</div>
         </div>
       </div>
 
-      {/* Nội dung chính (Sidebar + Content) */}
-      <div style={{ display: 'flex', minHeight: '80vh' }}>
+      {/* Main content layout (sidebar + content area) */}
+      <div className="main-content">
         {/* Sidebar bên trái */}
-        <div style={{
-          width: '200px',
-          backgroundColor: '#8bc34a70',
-          borderRight: '1px solid #ddd',
-          padding: '1rem'
-        }}>
-          <ul style={{ listStyle: 'unset', paddingLeft: 8 }}>
-            <li style={{ marginBottom: '1rem' }}>
-              <Link to="/master/trang-chu">Trang chủ</Link>
+        <div className="sidebar">
+          <ul className="sidebar-list">
+            <li className="sidebar-item">
+              <Link to="/master/trang-chu" className={`sidebar-link ${location.pathname === "/master/trang-chu" ? 'active' : ''}`}>Trang chủ</Link>
             </li>
-            <li style={{ marginBottom: '1rem' }}>
-              <Link to="/master/thanh-phan-tham-gia">Thành phần tham gia</Link>
+            <li className="sidebar-item">
+              <Link to="/master/thanh-phan-tham-gia" className={`sidebar-link ${location.pathname === "/master/thanh-phan-tham-gia" ? 'active' : ''}`}>Thành phần tham gia</Link>
             </li>
-            <li style={{ marginBottom: '1rem' }}>
-              <Link to="/master/lo-sua-list">Lô sữa</Link>
+            <li className="sidebar-item">
+              <Link to="/master/lo-sua-list" className={`sidebar-link ${location.pathname === "/master/lo-sua-list" ? 'active' : ''}`}>Lô sữa</Link>
             </li>
-            <li style={{ marginBottom: '1rem' }}>
-              <Link to="/master/san-pham-sua-list">Sản phẩm sữa</Link>
+            <li className="sidebar-item">
+              <Link to="/master/san-pham-sua-list" className={`sidebar-link ${location.pathname === "/master/san-pham-sua-list" ? 'active' : ''}`}>Sản phẩm sữa</Link>
             </li>
-            <li style={{ marginBottom: '1rem' }}>
-              <Link to="/master/san-pham-sua-list">Nhà phân phối cập nhật thông tin hộp sữa</Link>
+            <li className="sidebar-item">
+              <Link to="/master/lo-sua-list" className={`sidebar-link ${location.pathname === "/master/lo-sua-list" ? 'active' : ''}`}>Nhà phân phối cập nhật thông tin hộp sữa</Link>
             </li>
-            <li style={{ marginBottom: '1rem' }}>
-              <Link to="/master/san-pham-sua-list">Nhà phân phối phê duyệt vận chuyển</Link>
+            <li className="sidebar-item">
+              <Link to="/master/lo-sua-list" className={`sidebar-link ${location.pathname === "/master/lo-sua-list" ? 'active' : ''}`}>Nhà phân phối phê duyệt vận chuyển</Link>
             </li>
-            <li style={{ marginBottom: '1rem' }}>
-              <Link to="/master/san-pham-sua-list">Nhà bán lẻ cập nhật trạng thái</Link>
+            <li className="sidebar-item">
+              <Link to="/master/lo-sua-list" className={`sidebar-link ${location.pathname === "/master/lo-sua-list" ? 'active' : ''}`}>Nhà bán lẻ cập nhật trạng thái</Link>
             </li>
-            <li style={{ marginBottom: '1rem' }}>
-              <Link to="/master/truy-xuat-san-pham">Truy xuất nguồn gốc</Link>
+            <li className="sidebar-item">
+              <Link to="/master/truy-xuat-san-pham" className={`sidebar-link ${location.pathname === "/master/truy-xuat-san-pham" ? 'active' : ''}`}>Truy xuất nguồn gốc</Link>
             </li>
           </ul>
         </div>
 
-        {/* Khu vực hiển thị trang con */}
-        <div style={{ flex: 1, padding: '1rem' }}>
+        {/* Content area (where the children routes are rendered) */}
+        <div className="content">
           <Outlet />
         </div>
       </div>
 
       {/* Footer */}
-      <div style={{
-        textAlign: 'center',
-        padding: '0.5rem',
-        backgroundColor: '#cce5ff',
-        fontWeight: 'bold',
-        color: '#5a6461',
-        fontSize: "19px"
-      }}>
+      <div className="footer">
         Ⓒ Bộ môn CNPM - Khoa CÔNG NGHỆ THÔNG TIN
       </div>
     </div>

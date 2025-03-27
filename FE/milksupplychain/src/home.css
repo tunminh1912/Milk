@@ -1,0 +1,169 @@
+/* Home.css */
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* Container Styles */
+  .home-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+  
+  /* Header Styles */
+  .home-header {
+    background-color: #007bff; /* A Vibrant Blue */
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    border-bottom: 2px solid #0056b3;
+  }
+  
+  .home-header h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  .home-header p {
+    font-size: 1.2em;
+    font-style: italic;
+    opacity: 0.8;
+  }
+  
+  /* Overview Section Styles */
+  .supply-chain-overview {
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .supply-chain-overview h2 {
+    color: #007bff;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+  }
+  
+  .supply-chain-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Smooth Hover Effect */
+  }
+  
+  .supply-chain-image:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Step Section Styles */
+  .supply-chain-step {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .supply-chain-step:last-child {
+    border-bottom: none;
+  }
+  
+  .step-content {
+    flex: 1;
+    padding: 0 30px;
+  }
+  
+  .supply-chain-step h3 {
+    color: #007bff;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
+  
+  .supply-chain-step p {
+    color: #555;
+    line-height: 1.7;
+  }
+  
+  .step-image {
+    width: 40%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .step-image:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Specific Step Variations (Example) */
+  .farm-step {
+    background-color: #f9f9f9;
+  }
+  
+  .manufacturer-step {
+    flex-direction: row-reverse;
+    background-color: #f4f7f6;
+  }
+  
+  /* Footer Styles */
+  .home-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 960px) {
+    .supply-chain-step {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .step-content {
+      padding: 20px 0;
+    }
+  
+    .step-image {
+      width: 70%;
+      margin-bottom: 20px;
+    }
+  
+    .manufacturer-step {
+      flex-direction: column; /* Reset for smaller screens */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .home-header {
+      padding: 30px;
+    }
+  
+    .home-header h1 {
+      font-size: 2.2em;
+    }
+  
+    .home-header p {
+      font-size: 1em;
+    }
+  
+    .supply-chain-overview h2 {
+      font-size: 1.8em;
+    }
+  
+    .supply-chain-step h3 {
+      font-size: 1.5em;
+    }
+  
+    .step-image {
+      width: 90%;
+    }
+  }
